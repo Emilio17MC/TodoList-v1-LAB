@@ -8,6 +8,7 @@ let listItems = ["Buy Food", "Cook Food", "Eat Food"];
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 app.get("/", (req, res) => {
   const today = new Date();
