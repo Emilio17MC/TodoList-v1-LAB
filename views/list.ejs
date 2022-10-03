@@ -5,14 +5,18 @@
     <title>To Do List</title>
   </head>
   <body>
+    <h1><%= day %></h1>
 
-    
-    
-    <%  if (day === "Saturday" || day === "Sunday" || day === "Friday") { %>
-        <h1 style="color: purple;"><%= day %> ToDo List</h1>
-    <% } else { %>
-        <h1 style="color: blue;"><%= day %> ToDo List</h1>
-    <% } %>
+    <ul>
+      <% listItems.forEach(element => { %>
+      <li><%= element %></li>
+      <% }); %>
+    </ul>
 
+    <form action="/" method="POST">
+      <input type="text" name="newItem" autocomplete="off" />
+
+      <button type="submit" name="button">Add</button>
+    </form>
   </body>
 </html>
